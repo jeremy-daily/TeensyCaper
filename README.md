@@ -6,8 +6,9 @@ This repository assumes you know how to work with the <a href="https://www.pjrc.
 ## Bill of Materials
 
 Reference the Schematic for the Designators.
+
 | Comment | Description | Designator | Quantity | Manufacturer | Manufacturer Part Number | Supplier | Supplier Part Number |
-| ------- | ----------- | ---------- |: ------ :| ------------ | ------------------------ | -------- | -------------------- |
+| ------- | ----------- | ---------- | ------ | ------------ | ------------------------ | -------- | -------------------- |
 | CR1225FV-LF | Coin Cell Battery 3V 2-PIN VERT 48mAh 12.5 x 2.5mm | Batt1 | 1 | Renata | CR1225FV-LF | Mouser | 614-CR1225FV-LF| 
 | Teensy 3.2 | 32 Bit Arduino-Compatible Microcontroller | BRD1 | 1 | <a href="https://www.pjrc.com/store/teensy32.html">PRJC</a> | TEENSY32 | Sparkfun | DEV-13736| 
 | 0.1uF | Multilayer Ceramic Capacitors MLCC - Leaded 50volts 0.1uF 10% X7R | C1, C2, C5, C6 | 4 | AVX | SR215C104KAA | Mouser | 581-SR215C104K| 
@@ -56,8 +57,9 @@ OSH Park sells the Teensy 3.2 too!
 This section describes some different interface cables than can be made to interface the teensy caper to the networks.
 ### J1939 at 250k
 The black SAE Standard 9-pin connector has the following connections:
+
 | SAE Pin | Description | Suggested Colors | TeensyCaper Pin |
-| --- | ----------- | --- |
+| --- | ----------- | --- | --- |
 | A | Ground | Black | J2:1
 | B | Raw Battery + | Red | J2:2
 | C | J1939 H | Yellow | J2:3 |
@@ -77,7 +79,7 @@ To build a splitter cable, the machined sockets that are used in the diagnostic 
 
 The parts list is as follows:
 |  Description                  |  Quantity | Manufacturer | Manufacturer Part Number | Supplier | Supplier Part Number |
-|  -----------                  |:  ------ :| ------------ | ------------------------ | -------- | -------------------- |
+|  -----------                  |  ------ | ------------ | ------------------------ | -------- | -------------------- |
 | 9-pin Diagnostic Plug Housing | 1         | Amphenol Sine Systems | AHD16-9-1939S | Mouser | 654-AHD16-9-1939S | 
 | 16 gauge Socket Connector | 9         | Amphenol Sine Systems | AT62-201-16141 | Mouser | 654-AT62-201-16141 | 
 | 9-pin Inline Receptical | 2         | Amphenol Sine Systems | AHD14-9-1939P | Mouser | 654-AHD14-9-1939P | 
