@@ -1,11 +1,11 @@
 # TeensyCaper
 Electronics to interface a PRJC Teensy 3.2 32-bit Arduino Compatible board with J1939 connections in heavy duty equipment. Includes Two CAN Channels, J1708, and LIN.
 
-This repository assumes you know how to work with the <a target="_blank" href="https://www.pjrc.com/store/teensy32.html">Teensy</a> and <a href="https://www.pjrc.com/teensy/teensyduino.html">Teensyduino.</a>
+This repository assumes you know how to work with the <a href="https://www.pjrc.com/store/teensy32.html" target="_blank" >Teensy</a> and <a href="https://www.pjrc.com/teensy/teensyduino.html">Teensyduino.</a>
 
 ## Bill of Materials
 
-Reference the Schematic for the Designators. Most items are from <a target="_blank" href="http://www.mouser.com"> Mouser </a> or Sparkfun.
+Reference the Schematic for the Designators. Most items are from <a href="http://www.mouser.com" target="_blank" > Mouser </a> or Sparkfun.
 
 | Comment | Description | Designator | Quantity | Manufacturer | Manufacturer Part Number | Supplier | Supplier Part Number |
 | ------- | ----------- | ---------- | ------ | ------------ | ------------------------ | -------- | -------------------- |
@@ -53,6 +53,21 @@ The printed circuit board can be ordered from OSH Park in batches of 3 using the
 
 OSH Park sells the Teensy 3.2 too!
 
+### Teensy Headers
+The following headers work well with firm inserting force. These are stackable and work for all the expansions boards for the Teensy. They have a long solder tail.
+  Mouser Part #: 575-31143164
+  Manufacturer Part #:311-43-164-41-001000
+  Manufacturer:Mill-Max
+  Description: IC & Component Sockets 64 POS STRAIGHT .1"
+
+Additionally, the Mill-Max 310 series is for a base layer (they have standard solder tails).
+
+The following part are dual ended pins that interface with the 311 and 310 series sockets. 
+  Mouser Part #: 575-35040132000010
+  Manufacturer Part #: 350-40-132-00-001000
+  Manufacturer: Mill-Max
+  Description: Headers & Wire Housings 32P HDRSTRIP .025Pin .018 SOLDER TAIL
+  
 ## Interface Cables
 This section describes some different interface cables than can be made to interface the teensy caper to the networks.
 ### J1939 at 250k
@@ -93,4 +108,26 @@ These part numbers also corrospond to Deutsch part numbers by changing the A to 
 ### Man-in-the-Middle Cable
 This cable connects to one J1939 connector with a plug housing on CAN1 of the TeensyCaper and another receptical housing to J1939 on CAN2.
 The CAN 2 cavities are not used on the 9-pin connector. Power, ground, and J1708 are doubled up on the plug housing. 
+
+## SD Card
+### 
+
+Add the following lines to the beginning of the setup() function:
+ 
+  pinMode(SDCS, OUTPUT);
+  digitalWrite(SDCS, HIGH);   // de-select the SD Card
+
+  where SDCS is the chip select pin for the SD card.
+  
+  The SD Card holder from PJRC will not work with the CAN because it uses Pin 4. Therefore, you must cut the pin 4 off the SD card holder and connect it somewhere else, like pin A1.
+
+##Arduino
+1. Download Teensyduino with FlexCAN
+2. Install library for SD cards from https://github.com/greiman/SdFat-beta
+
+#Software Operations
+The philosophy of this setup is to run different operations by using different example sketches. 
+
+##Formatting the SD Card
+With an SD card installed in the SD card expansion shield for Teensy ()
 
